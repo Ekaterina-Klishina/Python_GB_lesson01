@@ -1,0 +1,97 @@
+# Задание 1
+
+count = int(input("Введите некоторое число: "))
+
+text = input("Введите некоторое слово: ")
+
+print(f"Вы ввели число {count} , и слово {text}")
+
+
+# Задание 2
+
+user_seconds = int(input("Введите количество секунд: "))
+
+hours = user_seconds//3600
+
+minutes = (user_seconds - hours * 3600)//60
+
+seconds = user_seconds - (hours * 3600 + minutes * 60)
+
+print(f"{hours} ч, {minutes} мин, {seconds} сек")
+
+
+
+#Задание 3
+
+n = int(input("Введите число n от 1 до 9: "))
+
+if n > 9:
+    print("Вы ввели некорректное число , повторите ")
+    n = int(input("Введите число n от 1 до 9: "))
+
+sum = n + (n * 10 + n) + (n * 100 + n * 10 + n)
+
+print(f"При сложении {n} + {n}{n} + {n}{n}{n} получится сумма: {sum}")
+
+
+# Задание 4
+
+user_number = abs(int(input("Введите целое положительное число: ")))
+
+max_number = user_number % 10
+
+while user_number >= 1:
+     user_number = user_number // 10
+     if user_number % 10 > max_number:
+         max_number = user_number % 10
+     if user_number > 9:
+         continue
+     else:
+         print("Максимальное цифра в числе ", max_number)
+         break
+         
+ # Задание 5 
+ 
+ revenue = int(input("Введите показатель выручки: "))
+
+costs = int(input("Введите показатель издержек: "))
+
+profit = revenue - costs
+
+profitability = profit / revenue
+
+if revenue > costs:
+
+    print(f"В вашей компании прибыль и ваша рентабельность: {profitability}")
+
+    employees = int(input("Введите количество человек в вашей компании: "))
+
+    profit_for_employees = profit / employees
+
+    print(f"Прибыль на одного сотрудника состовляет: {profit_for_employees}")
+
+
+elif revenue == costs:
+    print("Ваша компания работает в ноль")
+
+else:
+    print("В вашей компании убыток")
+    
+
+# Задание 6
+
+first_distance = int(input("Введите результат в первый день: "))
+
+max_distance = int(input("Введите максимально ожидаемый результат по дистанции: "))
+
+count_days = 1
+
+if max_distance <= first_distance:
+    print(f"Вы уже достигли своего результата за {count_days} дн!")
+
+
+while max_distance > first_distance:
+    first_distance = first_distance * 0.1 + first_distance
+    count_days += 1
+
+print(f"Вы достигнете своего результата за {count_days} дн")
